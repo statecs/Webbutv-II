@@ -14,9 +14,10 @@ fputs($fp , "$hits[0]");
 fclose($fp);
 
 //Ersätter tempstring med siffervärdet
-$html = file_get_contents("index.html");
+$html = file_get_contents("template.html");
 $html = str_replace('---$hits---', $hits[0], $html);
 
 //Skriver ut html-elementen
 echo $html;
+
 ?>

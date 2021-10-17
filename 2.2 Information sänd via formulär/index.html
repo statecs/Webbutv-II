@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>2.2 Information sänd via formulär</title>
+  <meta name="description" content="Information sänd via adressfält och länkar">
+  <meta name="author" content="Christopher State">
+
+</head>
+
+<form method="post" action="form.php">
+  <div>
+    <input type="hidden" name="hidden" value="I am hidden!"/> 
+  </div>
+  <p>
+    <input type="text" name="text_box" value="ABC"/>
+  </p>
+  <p>
+    <textarea name="text_area" rows="10" cols="10">DEF</textarea>
+  </p>
+  <p>
+    <input type="checkbox" name="check_box" value="ON" checked="checked"/>
+  </p>
+  <p>
+    <input type="radio" value="v1" name="radio_button" checked="checked"/> <input type="radio" value="v2" name="radio_button"/>
+  </p>
+  <p>
+    <select name="drop_down_menu" size="1">
+      <option value="Värde1">
+        Värde1
+      </option>
+      <option value="Värde2">
+        Värde2
+      </option>
+    </select>
+  </p>
+  <p>
+    <input src="example.jpg" name="image" type="image" alt="En bild"/>
+  </p>
+  <p>
+    <input type="submit" value="Tryck mig" name="push_button"/>
+  </p>
+</form>
+<body>
+
+</body>
+</html>

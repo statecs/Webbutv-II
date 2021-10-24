@@ -7,6 +7,7 @@ if (!empty($_GET)) {
     $html = str_replace('---session-id---', $_GET['session'], $html);
     echo $html;
 } else {
+    //Om sessions-id inte finns, randomisera ny. 
     $_GET['session'] = rand();
     $html = str_replace('---session-id---', $_GET['session'], $html);
     echo $html;

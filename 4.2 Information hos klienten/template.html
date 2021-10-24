@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>4.2 Information hos klienten</title>
+  <meta name="description" content="4.2 Information hos klienten">
+  <meta name="author" content="Christopher State">
+
+</head>
+<body>
+  <h1>Startsida på webbplatsen</h1>
+  <p>
+    Slumpmässigt sessions-id (---session-id---) sparas i en kaka. Ladda om sidan för att skapa ett nytt sessions-id.
+  </p>  
+  <p>
+    <a href="example_2.php?session-id=---session-id---">En intern länk</a>
+  </p>
+  <p>
+    <a href="example_2.php?session-id=---session-id---">En intern länk till</a>
+  </p>
+  <p>
+    <a href="http://su.se/">En extern länk</a>
+  </p>
+  <p>
+    Ett formulär:
+  </p>
+  <form method="get" action="example_2.php">
+    <p>
+      Namn: <input type="text" name="name" />
+    </p>
+    <p>
+      <input type="hidden" name="session-id" value="---session-id---">
+      <input type="submit" value="Sänd" name="button" />
+    </p>
+  </form>
+</body>
+</html>

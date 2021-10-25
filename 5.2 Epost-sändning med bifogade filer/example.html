@@ -6,7 +6,7 @@
     <title>Exempel</title>
   </head>
   <body>
-    <form method="post" action="example.php">
+    <form method="post" enctype="multipart/form-data" action="example.php">
       <p>
         <input type="text" name="from" placeholder="Från"/>
       </p>
@@ -24,7 +24,10 @@
       </p>
       <p>
         <textarea name="message" rows="10" cols="25" placeholder="Meddelande"></textarea>
-      </p>    
+      </p>
+      <p>
+        <input type='file' name='file[]' multiple='multiple'/>
+      </p>
       <p>
         <input type="text" name="password" placeholder="Lösenord">
       </p>

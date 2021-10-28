@@ -1,4 +1,4 @@
-<?php w
+<?php 
     include('../header.php'); 
 
     $db = new CRUD;

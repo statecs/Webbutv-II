@@ -21,28 +21,30 @@ $mail->		Mailer 		= "smtp";
 $mail->		Host 		= "ssl://smtp.gmail.com";
 $mail->		Port 		= 465;
 $mail->		SMTPAuth 	= true;
-$mail->		Username 	= "cs.state@gmail.com"; // SMTP username
+$mail->		Username 	= "webbtest0@gmail.com"; // SMTP username
 $mail->		Password 	= $_POST['password']; 
 $mail->		Cc		   	= $_POST['cc'];
 $mail->		Bcc		   	= $_POST['bcc'];
 $mail->		From     	= $_POST['from'];
 $mail->		Subject  	= $_POST['subject'];
 $mail->		Body     	= $_POST['message'] . $sign . "\n\n";
+$mail->		AddAddress($_POST['to']);  
 //Loopar igenom filer som laddats upp. 
 for($i=0;$i<count($_FILES['file']['name']);$i++){
 	if($_FILES["file"]["name"][$i]!= ""){  
 	  $strFilesName = $_FILES["file"]["name"][$i];  
 	  $strContent = chunk_split(base64_encode(file_get_contents($_FILES["file"]["tmp_name"][$i])));  
+	  $strSid = md5(uniqid(time()));
 	  $uploadfile .= "--".$strSid."\n";  
 	  $uploadfile .= "Content-Type: application/octet-stream; name=\"".$strFilesName."\"\n";  
 	  $uploadfile .= "Content-Transfer-Encoding: base64\n";  
 	  $uploadfile .= "Content-Disposition: attachment; filename=\"".$strFilesName."\"\n\n";  
 	  $uploadfile .= $strContent."\n\n";  
 	  //Bifogar filer till epostmeddelandet.
-	  $mail->		addAttachment($uploadfile, $strFilesName);
+	  $mail->addStringAttachment(base64_decode($uploadfile), $strFilesName);
 	}
   }
-$mail->		AddAddress($_POST['to']);  
+
 $mail->WordWrap = 50;  
 
  header('Content-type: text/plain');

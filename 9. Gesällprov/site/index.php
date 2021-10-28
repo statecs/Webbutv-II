@@ -16,11 +16,6 @@
         }
     }
 
-
-    echo "<pre>";
-        print_r($_SESSION['cart']);
-    echo "</pre>";
-
     if(isset($_GET['action']) && isset($_GET['id'])) {
         if($_GET['action'] == 'add-to-cart') {
             if(isset($_SESSION['cart'])) {

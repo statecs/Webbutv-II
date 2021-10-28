@@ -10,7 +10,12 @@
             header("Location: ".$domain."admin/dashboard.php");
         }
     }
-?>
+
+    if(!isset($_SESSION['is_loggedin']) && !$_SESSION['is_loggedin'] == true) { 
+        header("Location: ".$domain."/index.php");
+    }
+        
+    ?>
 
     <h3 class="mb-4">Dashboard</h3>
 

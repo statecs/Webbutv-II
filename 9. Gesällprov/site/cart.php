@@ -9,7 +9,7 @@
     }
 ?>
 
-    <h3 class="mb-4">Cart</h3>
+    <h3 class="mb-4">Varukorg</h3>
 
     <?php if(count($_SESSION['cart'])) { ?>
         <table class="table table-bordered">

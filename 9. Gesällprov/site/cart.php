@@ -46,7 +46,7 @@
             <td>
                 <a href="?action=delete&id=<?= $product['id'] ?>" 
                    class="btn btn-sm btn-danger" 
-                   onclick="return confirm('Are you sure?')"
+                   onclick="return confirm('Är du säker att du vill ta bort?')"
                 >
                     Ta bort
                 </a>
